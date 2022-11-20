@@ -1,22 +1,25 @@
-let matrix = []
-let grassArr = []
-let grassEater = []
-let predatorArr = []
-let rockArr = []
-let n = 40
-let m = 50
-let side = 40;
+// let LivingCreature = require("./LivingCraeture")
+
+
+// let matrix = []
+// let grassArr = []
+// let grassEater = []
+// let predatorArr = []
+// let rockArr = []
+// let n = 40
+// let m = 50
+// let side = 40;
 
 let img;
 
 function setup() {
-    for (let i = 0; i < n; i++) {
-        matrix[i] = []
-        for (let j = 0; j < m; j++) {
-            let numbers = random([1, 0, 2, 3, 4])
-            matrix[i][j] = numbers
-        }
-    }
+    // for (let i = 0; i < n; i++) {
+    //     matrix[i] = []
+    //     for (let j = 0; j < m; j++) {
+    //         let numbers = random([1, 0, 2, 3, 4])
+    //         matrix[i][j] = numbers
+    //     }
+    // }
 
     frameRate(10);
     createCanvas(2000, 1000);
@@ -24,32 +27,32 @@ function setup() {
 
     let ind = 1
 
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                if (grassArr.length < 500) {
-                    grassArr.push(new Grass(j, i, ind))
+    // for (let i = 0; i < matrix.length; i++) {
+    //     for (let j = 0; j < matrix[i].length; j++) {
+    //         if (matrix[i][j] == 1) {
+    //             if (grassArr.length < 500) {
+    //                 grassArr.push(new Grass(j, i, ind))
 
-                } else {
-                    matrix[i][j] = 0
-                }
-            }
-            else if (matrix[i][j] == 2) {
-                if (grassEater.length < 25) {
-                    grassEater.push(new GrassEater(j, i, ind))
-                } else {
-                    matrix[i][j] = 0
-                }
-            }
-            else if (matrix[i][j] == 3) {
-                if (predatorArr.length < 10) {
-                    predatorArr.push(new Predator(j, i, ind))
-                } else {
-                    matrix[i][j] = 0
-                }
-            }
-        }
-    }
+    //             } else {
+    //                 matrix[i][j] = 0
+    //             }
+    //         }
+    //         else if (matrix[i][j] == 2) {
+    //             if (grassEater.length < 25) {
+    //                 grassEater.push(new GrassEater(j, i, ind))
+    //             } else {
+    //                 matrix[i][j] = 0
+    //             }
+    //         }
+    //         else if (matrix[i][j] == 3) {
+    //             if (predatorArr.length < 10) {
+    //                 predatorArr.push(new Predator(j, i, ind))
+    //             } else {
+    //                 matrix[i][j] = 0
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 
