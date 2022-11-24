@@ -1,5 +1,5 @@
 // let LivingCreature = require("./LivingCraeture")
-
+let socket = io()
 
 // let matrix = []
 // let grassArr = []
@@ -8,9 +8,10 @@
 // let rockArr = []
 // let n = 40
 // let m = 50
-// let side = 40;
+let side = 40;
 
 let img;
+
 
 function setup() {
     // for (let i = 0; i < n; i++) {
@@ -56,7 +57,7 @@ function setup() {
 }
 
 
-function draw() {
+function update(matrix) {
 
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
@@ -86,15 +87,15 @@ function draw() {
         }
     }
 
-    for (let i in grassArr) {
-        grassArr[i].mul()
-    }
-    for (let i in grassEater) {
-        grassEater[i].eat()
-    }
-    for (let i in predatorArr) {
-        predatorArr[i].eat()
-    }
+    // for (let i in grassArr) {
+    //     grassArr[i].mul()
+    // }
+    // for (let i in grassEater) {
+    //     grassEater[i].eat()
+    // }
+    // for (let i in predatorArr) {
+    //     predatorArr[i].eat()
+    // }
     // if (mouseIsPressed) {
     //     fill(0);
     //   } else {
@@ -103,3 +104,4 @@ function draw() {
     //   ellipse(mouseX, mouseY, 80, 80);
     // }
 }
+socket.on('send matrix', update)

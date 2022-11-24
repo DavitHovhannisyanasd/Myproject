@@ -31,6 +31,8 @@ let rockArr = []
 let n = 40
 let m = 50
 
+
+
 // let side = 40;
 
 
@@ -71,5 +73,21 @@ function createObj(matrix){
             }
         }
     }
+    for (let i in grassArr) {
+        grassArr[i].mul()
+    }
+    for (let i in grassEater) {
+        grassEater[i].eat()
+    }
+    for (let i in predatorArr) {
+        predatorArr[i].eat()
+    }
+
 }
-createObj(matrix)
+
+
+io.on('connection', function (socket) {
+    createObj(matrix)
+    io.sockets.emit("send matrix", data);
+ });
+ 
